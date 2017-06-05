@@ -1,0 +1,17 @@
+{
+  "name": "vapor-reverse-lookup",
+  "version": "1.0.0",
+  "description": "Web site for vapor.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "github-markdown-css": "^2.6.0",
+    "gulp": "^3.9.1",
+    "gulp-vapor": "^1.1.0",
+    "materialize-css": "^0.98.2"
+  }
+}

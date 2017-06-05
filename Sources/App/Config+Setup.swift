@@ -1,4 +1,5 @@
 import LeafProvider
+import MarkdownProvider
 
 extension Config {
     public func setup() throws {
@@ -12,5 +13,6 @@ extension Config {
     /// Configure providers
     private func setupProviders() throws {
         try addProvider(LeafProvider.Provider.self)
+        try addProvider(MarkdownProvider.Provider.self)
     }
 }
