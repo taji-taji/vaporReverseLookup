@@ -20,10 +20,24 @@ final class Routes: RouteCollection {
                 "currentCategoryName": "".makeNode(in: nil),
                 "currentContentName": "".makeNode(in: nil),
                 ])
-            .makeNode(in: HomeContext())
+                .makeNode(in: StaticPageContext(page: .home))
             return try self.view.make("base", contents, for: req)
         }
-        
+
+        /// GET /author
+        builder.get("author") { req in
+            let markdown = try String(contentsOfFile: "Resources/Views/Markdown/author.md")
+            let html = try markdownToHTML(markdown, options: [])
+            let contents = try PageContents(node: [
+                "title": "逆引き Vapor | Author",
+                "contentsBody": html,
+                "currentCategoryName": "".makeNode(in: nil),
+                "currentContentName": "".makeNode(in: nil),
+                ])
+                .makeNode(in: StaticPageContext(page: .author))
+            return try self.view.make("base", contents, for: req)
+        }
+
         let contents = try PageContents.getSideMenu()
         contents.array?.forEach({ (category) in
             guard let id = category["id"]?.string, let sub = category["sub"]?.array, let name = category["name"]?.string else {

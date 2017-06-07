@@ -1,12 +1,21 @@
 <ul id="sidebar-wrapper" class="sidebar-nav nav flex-column bg-faded">
 
-    <li class="sidebar-brand #if(isHome) { active }">
+    <li class="sidebar-brand #equal(staticPage, "home") { active }">
         <a href="/" class=""><span class="fa fa-home solo">Home</span></a>
+    </li>
+    <li class="sidebar-brand #equal(staticPage, "author") { active }">
+        <a href="/author" class=""><span class="fa fa-home solo">Author</span></a>
     </li>
 
 #loop(categories, "category") {
-    <li class="#if(category.isCurrentCategory) { active }">
-        <a href="" class=""><span class="fa fa-home solo">#(category.name)</span></a>
+    <li>
+        <span class="fa fa-home solo">
+            #if(category.isCurrentCategory) {
+                <strong>#(category.name)</strong>
+            } ##else() {
+                #(category.name)
+            }
+        </span>
         <ul>
             #loop(category.sub, "sub") {
                 <li class="#if(sub.isCurrentContent) { active }">

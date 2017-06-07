@@ -35,8 +35,8 @@ extension PageContents: NodeRepresentable {
         try node.set("categories", categories)
         try node.set("currentCategoryName", currentCategoryName)
         try node.set("currentContentName", currentContentName)
-        if let isHome = context?.isHomeContext, isHome {
-            try node.set("isHome", true)
+        if let staticPage = context?.isStaticPageContext {
+            try node.set("staticPage", staticPage)
         }
         return node
     }
