@@ -9,14 +9,16 @@
 
 #loop(categories, "category") {
     <li>
-        <span class="fa fa-home solo">
-            #if(category.isCurrentCategory) {
-                <strong>#(category.name)</strong>
-            } ##else() {
-                #(category.name)
-            }
-        </span>
-        <ul>
+        <a href="#()" class="category-toggle">
+            <span class="fa fa-home solo">
+                #if(category.isCurrentCategory) {
+                    <strong>#(category.name)</strong>
+                } ##else() {
+                    #(category.name)
+                }
+            </span>
+        </a>
+        <ul class="sub-category" style="display: none;">
             #loop(category.sub, "sub") {
                 <li class="#if(sub.isCurrentContent) { active }">
                     <a href="/#(category.id)/#(sub.name)" class=""><span class="fa fa-home solo">#(sub.name)</span></a>

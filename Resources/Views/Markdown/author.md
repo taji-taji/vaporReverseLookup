@@ -1,6 +1,6 @@
 # Site Author
 
-- Yutaka Tajika a.k.a **taji-taji**
+- **Yutaka Tajika** a.k.a **taji-taji**
 
 ## Social Account
 
