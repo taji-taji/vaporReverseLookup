@@ -60,7 +60,8 @@ final class Routes: RouteCollection {
                             return
                     }
                     // 各カテゴリー配下のmarkdownのコンテンツをルーティングに追加
-                    cat_builder.get(path) { req in
+                    let encodedPath = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                    cat_builder.get(encodedPath) { req in
                         return try self.view.make("base", c, for: req)
                     }
                 })
