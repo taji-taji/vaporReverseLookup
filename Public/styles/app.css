@@ -73,8 +73,14 @@
     text-decoration: none;
 }
 
+.sidebar-nav .sub-category {
+    padding-left: 40px;
+    font-size: 0.9em;
+}
+
 .sidebar-nav .sub-category a {
     padding: 10px 5px 10px 15px;
+    text-decoration: underline;
 }
 
 .sidebar-nav > .sidebar-brand {
