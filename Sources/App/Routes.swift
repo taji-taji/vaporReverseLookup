@@ -38,6 +38,9 @@ final class Routes: RouteCollection {
             return try self.view.make("base", contents, for: req)
         }
 
+        /// search
+        builder.resource("search", SearchController(view))
+
         let contents = try PageContents.getSideMenu()
         contents.array?.forEach({ (category) in
             guard let id = category["id"]?.string, let sub = category["sub"]?.array, let name = category["name"]?.string else {
@@ -49,7 +52,7 @@ final class Routes: RouteCollection {
                     guard
                         let path = content.object?["name"]?.string,
                         let markdown = try? String(contentsOfFile: "Resources/Views/Markdown/Categories/\(name)/\(path).md"),
-                        let html = try? markdownToHTML(markdown, options: []),
+                        let html = try? markdownToHTML(markdown, options: [.smartQuotes, .hardBreaks, .validateUTF8]),
                         let c = try? PageContents(node: [
                             "title": "逆引き Vapor | \(name) | \(path)",
                             "contentsBody": html,

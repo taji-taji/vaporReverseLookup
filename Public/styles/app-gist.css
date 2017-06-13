@@ -1,0 +1,11 @@
+/*
+ * gist
+ */
+.markdown-body .gist table tr {
+  border: none;
+}
+
+.markdown-body .gist table th,
+.markdown-body .gist table td {
+  border: none;
+}
