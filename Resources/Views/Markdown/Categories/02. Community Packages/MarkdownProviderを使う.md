@@ -3,7 +3,7 @@
 
 # MarkdownProviderを使う
 
-## MarkdownProviderとは？
+## ● MarkdownProviderとは？
 
 - [SwiftMarkdownパッケージ](https://github.com/vapor-community/markdown)のVaporProviderです
 - MarkdownProviderでは、SwiftMarkdownをProviderとしてVaporプロジェクトで使用できるようにしてくれるパッケージです
@@ -14,7 +14,7 @@
 - マークダウン文字列をHTML文字列に変換してくれるライブラリです
 - 実装は[cmark](https://github.com/github/cmark)のSwiftラッパーです
 
-## 使い方
+## ● 使い方
 
 ### Package.swiftにパッケージを追加
 
@@ -39,4 +39,8 @@ dependencies: [
 
 <script src="https://gist.github.com/taji-taji/4a4f2e0179425a997e63bcf322b6f08d.js"></script>
 
-### マークダウン文字列をHTMLに変換する
+### マークダウン文字列をHTML文字列に変換する
+
+<script src="https://gist.github.com/taji-taji/8046b47f85522805f8243f034a7628ae.js"></script>
+
+###  View(Leaf)にマークダウンを渡す
